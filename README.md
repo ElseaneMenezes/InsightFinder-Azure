@@ -53,7 +53,8 @@ Após a criação do serviço, o próximo passo é configurar o **índice de bus
    - **filterable**: para aplicar filtros nas buscas
    - **sortable**: para ordenação, como no caso da `data_publicacao`
 6. Salve o índice
-   {
+```json
+{
   "name": "artigos-index",
   "fields": [
     { "name": "id", "type": "Edm.String", "key": true },
@@ -63,86 +64,3 @@ Após a criação do serviço, o próximo passo é configurar o **índice de bus
     { "name": "data_publicacao", "type": "Edm.DateTimeOffset", "sortable": true }
   ]
 }
-
-3️⃣ Criando a API para Consulta com Flask
-Agora, vamos criar uma API para consultar o índice configurado no Azure Cognitive Search.
-
-3.1 Instalação das Dependências
-Primeiro, instale as dependências no seu ambiente Python:
-
-bash
-Copiar
-Editar
-pip install flask requests
-3.2 Criando o arquivo app.py
-Crie um arquivo chamado app.py e adicione o seguinte código:
-
-python
-Copiar
-Editar
-from flask import Flask, request, jsonify
-import requests
-
-app = Flask(__name__)
-
-# Configurações do Azure Search
-```AZURE_SEARCH_ENDPOINT = "https://meu-search-service.search.windows.net"
-AZURE_SEARCH_API_KEY = "SUA_CHAVE_AQUI"
-AZURE_SEARCH_INDEX = "artigos-index"
-
-@app.route("/buscar", methods=["GET"])
-def buscar():
-    termo = request.args.get("q")  # Recebe o termo de busca pela URL
-    headers = {
-        "Content-Type": "application/json",
-        "api-key": AZURE_SEARCH_API_KEY
-    }
-    query = {
-        "search": termo
-    }
-
-    response = requests.post(
-        f"{AZURE_SEARCH_ENDPOINT}/indexes/{AZURE_SEARCH_INDEX}/docs/search?api-version=2021-04-30-Preview",
-        json=query,
-        headers=headers
-    )
-
-    return jsonify(response.json())
-
-if __name__ == "__main__":
-    app.run(debug=True)
-🔑 Importante: Substitua "SUA_CHAVE_AQUI" pela chave de administrador do seu serviço Azure.
-
-3.3 Testando a API com Postman
-Inicie o servidor localmente com o comando:
-
-bash
-Copiar
-Editar
-python app.py
-No Postman, faça uma requisição GET para:
-
-arduino
-Copiar
-Editar
-http://127.0.0.1:5000/buscar?q=pesquisa
-Você deverá receber os resultados da busca em formato JSON, como no exemplo abaixo:
-
-```json
-Copiar
-Editar
-{
-  "value": [
-    {
-      "@search.score": 1.23,
-      "id": "001",
-      "titulo": "Artigo sobre Azure",
-      "conteudo": "Este é um conteúdo explicando como funciona o Azure Cognitive Search.",
-      "autor": "João Silva",
-      "data_publicacao": "2023-07-10T00:00:00Z"
-    }
-  ]
-}
-
-📅 Testando e Validando
-Para testar a API localmente e validar o comportamento de pesquisa, use o Postman ou outra ferramenta de sua escolha para enviar consultas para o endpoint da API.
