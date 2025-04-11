@@ -69,7 +69,7 @@ Após a criação do serviço, o próximo passo é configurar o **índice de bus
     { "name": "data_publicacao", "type": "Edm.DateTimeOffset", "sortable": true }
   ]
 }
-
+---
 
 ###3️⃣ Criando a API para Consulta com Flask
 Agora vamos criar uma API para consultar o índice que acabamos de configurar no Azure Cognitive Search.
