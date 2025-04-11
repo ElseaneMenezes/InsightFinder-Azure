@@ -53,6 +53,16 @@ Após a criação do serviço, o próximo passo é configurar o **índice de bus
    - **filterable**: para aplicar filtros nas buscas
    - **sortable**: para ordenação, como no caso da `data_publicacao`
 6. Salve o índice
+   {
+  "name": "artigos-index",
+  "fields": [
+    { "name": "id", "type": "Edm.String", "key": true },
+    { "name": "titulo", "type": "Edm.String", "searchable": true },
+    { "name": "conteudo", "type": "Edm.String", "searchable": true },
+    { "name": "autor", "type": "Edm.String", "filterable": true },
+    { "name": "data_publicacao", "type": "Edm.DateTimeOffset", "sortable": true }
+  ]
+}
 
 3️⃣ Criando a API para Consulta com Flask
 Agora, vamos criar uma API para consultar o índice configurado no Azure Cognitive Search.
