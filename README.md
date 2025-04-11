@@ -153,24 +153,3 @@ Para testar a API localmente e validar o comportamento de pesquisa, use o Postma
 
 🌟 Conclusão
 Este projeto implementa um serviço de busca inteligente utilizando Azure Cognitive Search com funcionalidades de enriquecimento de dados e análise semântica. A API criada permite consultas personalizadas com filtros e relevância, tornando a experiência de busca mais eficiente e eficaz.
-
-📝 Referências
-Documentação do Azure Cognitive Search
-
-Flask Documentation
-
-yaml
-Copiar
-Editar
-
----
-
-### O que fizemos:
-
-- Organizei os títulos e subtítulos para tornar o conteúdo legível.
-- Utilize os blocos de código com as linguagens corretas para realçar o texto.
-- Expliquei os passos de forma clara e adicionei exemplos para facilitar o entendimento.
-  
-Esse formato deve deixar seu `README.md` bem bonito e fácil de entender no GitHub! 🚀
-
-Se quiser adicionar mais alguma coisa ou precisar de ajustes, é só me avisar!
