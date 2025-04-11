@@ -2,8 +2,6 @@
 
 Este projeto demonstra como implementar uma solução de **busca inteligente baseada em IA**, utilizando o **Azure Cognitive Search** para realizar a **indexação, enriquecimento e consulta de dados** provenientes de uma base de documentos.
 
-Com o uso de técnicas de **análise semântica**, **filtros personalizados** e estratégias de **relevância**, a aplicação permite buscas rápidas, contextuais e precisas — ideal para sistemas que lidam com grandes volumes de dados textuais.
-
 ---
 
 ## 🛠️ Tecnologias Utilizadas
@@ -69,10 +67,8 @@ Após a criação do serviço, o próximo passo é configurar o **índice de bus
     { "name": "data_publicacao", "type": "Edm.DateTimeOffset", "sortable": true }
   ]
 }
----
-
-###3️⃣ Criando a API para Consulta com Flask
-Agora vamos criar uma API para consultar o índice que acabamos de configurar no Azure Cognitive Search.
+3️⃣ Criando a API para Consulta com Flask
+Agora, vamos criar uma API para consultar o índice configurado no Azure Cognitive Search.
 
 3.1 Instalação das Dependências
 Primeiro, instale as dependências no seu ambiente Python:
@@ -155,3 +151,25 @@ Para testar a API localmente e validar o comportamento de pesquisa, use o Postma
 
 🌟 Conclusão
 Este projeto implementa um serviço de busca inteligente utilizando Azure Cognitive Search com funcionalidades de enriquecimento de dados e análise semântica. A API criada permite consultas personalizadas com filtros e relevância, tornando a experiência de busca mais eficiente e eficaz.
+
+📝 Referências
+Documentação do Azure Cognitive Search
+
+Flask Documentation
+
+markdown
+Copiar
+Editar
+
+---
+
+### Explicações das separações:
+
+1. **Títulos e Subtítulos**: Você pode usar títulos (`#` para títulos principais e `###` para subtítulos) para separar claramente cada seção do projeto.
+2. **Linhas Horizontais**: Use `---` ou `***` para criar uma linha horizontal que ajuda a separar visualmente diferentes seções no seu `README.md`.
+3. **Espaços entre os blocos de código e o texto**: Entre um bloco de código e o texto, insira uma linha em branco para garantir que o código e o texto fiquem bem separados.
+4. **Blocos de Código**: Ao utilizar os três crases (\`\`\`) antes e depois de um código, você cria um bloco de código visualmente separado. Para cada tipo de código, como JSON, Python ou Bash, você deve abrir e fechar com os três crases, cada um com a linguagem adequada, para destacá-lo corretamente.
+
+Essa estrutura garante que seu `README.md` ficará bem organizado e legível no GitHub ou em qualquer outro repositório de código.
+
+Se precisar de mais alguma coisa, só avisar! 😊
